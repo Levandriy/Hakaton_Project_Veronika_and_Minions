@@ -1,4 +1,4 @@
-namespace Backend_ASPNET.Models
+namespace Test
 {
     public class ErrorViewModel
     {
