@@ -13,18 +13,19 @@ namespace Test.Data
         public TestContext (DbContextOptions<TestContext> options)
             : base(options)
         {
+            Database.EnsureCreated();
         }
 
-        public DbSet<Test.User> User { get; set; } = default!;
+        public DbSet<User> Users { get; set; } = default!;
 
-        public DbSet<Test.Access> Access { get; set; } = default!;
+        public DbSet<Job> Jobs { get; set; } = default!;
 
-        public DbSet<Test.Access_cons> Access_cons { get; set; } = default!;
+        public DbSet<Access_cons> Access_Cons { get; set; } = default!;
 
-        public DbSet<Test.Models.Catalogs> Catalogs { get; set; } = default!;
+        public DbSet<Catalogs> Catalogs { get; set; } = default!;
 
-        public DbSet<Test.Models.Catalog_cons> Catalog_cons { get; set; } = default!;
+        public DbSet<Catalog_cons> Catalog_Cons { get; set; } = default!;
 
-        public DbSet<Test.Materials> Materials { get; set; } = default!;
+        public DbSet<Materials> Materials { get; set; } = default!;
     }
 }

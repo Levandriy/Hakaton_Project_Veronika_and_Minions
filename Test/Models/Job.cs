@@ -1,7 +1,7 @@
 ﻿using Microsoft.Build.Framework;
-namespace Test.Models
+namespace Test
 {
-    public class Catalogs
+    public class Job
     {
         public int Id { get; set; }
         [Required]

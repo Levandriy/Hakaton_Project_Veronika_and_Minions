@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Test.Data;
 using Test.Models;
 
 namespace Test.Controllers
 {
-    public class Catalog_consController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class Catalog_consController : ControllerBase
     {
         private readonly TestContext _context;
 
@@ -19,145 +21,104 @@ namespace Test.Controllers
             _context = context;
         }
 
-        // GET: Catalog_cons
-        public async Task<IActionResult> Index()
+        // GET: api/Catalog_cons
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Catalog_cons>>> GetCatalog_Cons()
         {
-              return _context.Catalog_cons != null ? 
-                          View(await _context.Catalog_cons.ToListAsync()) :
-                          Problem("Entity set 'TestContext.Catalog_cons'  is null.");
+          if (_context.Catalog_Cons == null)
+          {
+              return NotFound();
+          }
+            return await _context.Catalog_Cons.ToListAsync();
         }
 
-        // GET: Catalog_cons/Details/5
-        public async Task<IActionResult> Details(int? id)
+        // GET: api/Catalog_cons/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Catalog_cons>> GetCatalog_cons(int id)
         {
-            if (id == null || _context.Catalog_cons == null)
-            {
-                return NotFound();
-            }
+          if (_context.Catalog_Cons == null)
+          {
+              return NotFound();
+          }
+            var catalog_cons = await _context.Catalog_Cons.FindAsync(id);
 
-            var catalog_cons = await _context.Catalog_cons
-                .FirstOrDefaultAsync(m => m.Id == id);
             if (catalog_cons == null)
             {
                 return NotFound();
             }
 
-            return View(catalog_cons);
+            return catalog_cons;
         }
 
-        // GET: Catalog_cons/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Catalog_cons/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Catalog_id,Material_id")] Catalog_cons catalog_cons)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(catalog_cons);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(catalog_cons);
-        }
-
-        // GET: Catalog_cons/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null || _context.Catalog_cons == null)
-            {
-                return NotFound();
-            }
-
-            var catalog_cons = await _context.Catalog_cons.FindAsync(id);
-            if (catalog_cons == null)
-            {
-                return NotFound();
-            }
-            return View(catalog_cons);
-        }
-
-        // POST: Catalog_cons/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Catalog_id,Material_id")] Catalog_cons catalog_cons)
+        // PUT: api/Catalog_cons/5
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutCatalog_cons(int id, Catalog_cons catalog_cons)
         {
             if (id != catalog_cons.Id)
             {
-                return NotFound();
+                return BadRequest();
             }
 
-            if (ModelState.IsValid)
+            _context.Entry(catalog_cons).State = EntityState.Modified;
+
+            try
             {
-                try
-                {
-                    _context.Update(catalog_cons);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!Catalog_consExists(catalog_cons.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                await _context.SaveChangesAsync();
             }
-            return View(catalog_cons);
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!Catalog_consExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
         }
 
-        // GET: Catalog_cons/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        // POST: api/Catalog_cons
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPost]
+        public async Task<ActionResult<Catalog_cons>> PostCatalog_cons(Catalog_cons catalog_cons)
         {
-            if (id == null || _context.Catalog_cons == null)
+          if (_context.Catalog_Cons == null)
+          {
+              return Problem("Entity set 'TestContext.Catalog_Cons'  is null.");
+          }
+            _context.Catalog_Cons.Add(catalog_cons);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetCatalog_cons", new { id = catalog_cons.Id }, catalog_cons);
+        }
+
+        // DELETE: api/Catalog_cons/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteCatalog_cons(int id)
+        {
+            if (_context.Catalog_Cons == null)
             {
                 return NotFound();
             }
-
-            var catalog_cons = await _context.Catalog_cons
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var catalog_cons = await _context.Catalog_Cons.FindAsync(id);
             if (catalog_cons == null)
             {
                 return NotFound();
             }
 
-            return View(catalog_cons);
-        }
-
-        // POST: Catalog_cons/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            if (_context.Catalog_cons == null)
-            {
-                return Problem("Entity set 'TestContext.Catalog_cons'  is null.");
-            }
-            var catalog_cons = await _context.Catalog_cons.FindAsync(id);
-            if (catalog_cons != null)
-            {
-                _context.Catalog_cons.Remove(catalog_cons);
-            }
-            
+            _context.Catalog_Cons.Remove(catalog_cons);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+
+            return NoContent();
         }
 
         private bool Catalog_consExists(int id)
         {
-          return (_context.Catalog_cons?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Catalog_Cons?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

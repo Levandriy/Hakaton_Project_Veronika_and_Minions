@@ -274,5 +274,5 @@ E:\Профф\Проекты\Hakaton_Project_Veronika_and_Minions\Test\bin\Debug
 E:\Профф\Проекты\Hakaton_Project_Veronika_and_Minions\Test\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 E:\Профф\Проекты\Hakaton_Project_Veronika_and_Minions\Test\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 E:\Профф\Проекты\Hakaton_Project_Veronika_and_Minions\Test\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-E:\Профф\Проекты\Hakaton_Project_Veronika_and_Minions\Test\obj\Debug\net7.0\Test.RazorAssemblyInfo.cache
-E:\Профф\Проекты\Hakaton_Project_Veronika_and_Minions\Test\obj\Debug\net7.0\Test.RazorAssemblyInfo.cs
+E:\Профф\Проекты\Hakaton_Project_Veronika_and_Minions\Test\bin\Debug\net7.0\Test.xml
+E:\Профф\Проекты\Hakaton_Project_Veronika_and_Minions\Test\obj\Debug\net7.0\Test.xml

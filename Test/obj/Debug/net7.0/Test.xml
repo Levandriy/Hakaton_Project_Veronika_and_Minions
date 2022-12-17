@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Test</name>
+    </assembly>
+    <members>
+        <member name="T:Test.Controllers.UsersAPIController">
+            <summary>
+            API контроллер для модели пользователя
+            </summary>
+        </member>
+        <member name="M:Test.Controllers.UsersAPIController.GetUser">
+            <summary>
+            Выбрать всех пользователей из базы данных проекта, то есть базы данных, созданной согласно DBcontext (см папку Data, TestContext.cs)
+            </summary>
+            <returns>Список пользователей</returns>
+        </member>
+        <member name="M:Test.Controllers.UsersAPIController.GetUser(System.Int32)">
+            <summary>
+            Выбрать пользователя по ID из базы данных проекта
+            </summary>
+            <param name="id">ID пользователя, которого нужно найти</param>
+            <returns>Пользователя</returns>
+        </member>
+        <member name="M:Test.Controllers.UsersAPIController.PutUser(System.Int32,Test.User)">
+            <summary>
+            Изменить пользователя
+            </summary>
+            <param name="id">Код пользователя</param>
+            <param name="user">Новые данные (соответсвуют модели), код должен быть тем же</param>
+            <returns>Сообщение об успешном обновлении или ошибку</returns>
+        </member>
+        <member name="M:Test.Controllers.UsersAPIController.PostUser(Test.User)">
+            <summary>
+            Создать пользователя
+            </summary>
+            <param name="user">Данные пользователя (соответствуют модели)</param>
+            <returns>Результат выполнения, данные, которые были добавлены</returns>
+        </member>
+        <member name="M:Test.Controllers.UsersAPIController.DeleteUser(System.Int32)">
+            <summary>
+            Удалить пользователя
+            </summary>
+            <param name="id">Код пользователя, который нужно удалить</param>
+            <returns>Сообщение об успешном удалении, либо ошибку</returns>
+        </member>
+        <member name="T:Test.Models.SeedData">
+            <summary>
+            Для подключения базы данных
+            </summary>
+        </member>
+    </members>
+</doc>

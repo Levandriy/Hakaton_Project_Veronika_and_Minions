@@ -5,62 +5,62 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Test;
 using Test.Data;
-using Test.Models;
 
 namespace Test.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CatalogsController : ControllerBase
+    public class JobsController : ControllerBase
     {
         private readonly TestContext _context;
 
-        public CatalogsController(TestContext context)
+        public JobsController(TestContext context)
         {
             _context = context;
         }
 
-        // GET: api/Catalogs
+        // GET: api/Jobs
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Catalogs>>> GetCatalogs()
+        public async Task<ActionResult<IEnumerable<Job>>> GetJobs()
         {
-          if (_context.Catalogs == null)
+          if (_context.Jobs == null)
           {
               return NotFound();
           }
-            return await _context.Catalogs.ToListAsync();
+            return await _context.Jobs.ToListAsync();
         }
 
-        // GET: api/Catalogs/5
+        // GET: api/Jobs/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Catalogs>> GetCatalogs(int id)
+        public async Task<ActionResult<Job>> GetJob(int id)
         {
-          if (_context.Catalogs == null)
+          if (_context.Jobs == null)
           {
               return NotFound();
           }
-            var catalogs = await _context.Catalogs.FindAsync(id);
+            var job = await _context.Jobs.FindAsync(id);
 
-            if (catalogs == null)
+            if (job == null)
             {
                 return NotFound();
             }
 
-            return catalogs;
+            return job;
         }
 
-        // PUT: api/Catalogs/5
+        // PUT: api/Jobs/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCatalogs(int id, Catalogs catalogs)
+        public async Task<IActionResult> PutJob(int id, Job job)
         {
-            if (id != catalogs.Id)
+            if (id != job.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(catalogs).State = EntityState.Modified;
+            _context.Entry(job).State = EntityState.Modified;
 
             try
             {
@@ -68,7 +68,7 @@ namespace Test.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CatalogsExists(id))
+                if (!JobExists(id))
                 {
                     return NotFound();
                 }
@@ -81,44 +81,44 @@ namespace Test.Controllers
             return NoContent();
         }
 
-        // POST: api/Catalogs
+        // POST: api/Jobs
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Catalogs>> PostCatalogs(Catalogs catalogs)
+        public async Task<ActionResult<Job>> PostJob(Job job)
         {
-          if (_context.Catalogs == null)
+          if (_context.Jobs == null)
           {
-              return Problem("Entity set 'TestContext.Catalogs'  is null.");
+              return Problem("Entity set 'TestContext.Jobs'  is null.");
           }
-            _context.Catalogs.Add(catalogs);
+            _context.Jobs.Add(job);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetCatalogs", new { id = catalogs.Id }, catalogs);
+            return CreatedAtAction("GetJob", new { id = job.Id }, job);
         }
 
-        // DELETE: api/Catalogs/5
+        // DELETE: api/Jobs/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCatalogs(int id)
+        public async Task<IActionResult> DeleteJob(int id)
         {
-            if (_context.Catalogs == null)
+            if (_context.Jobs == null)
             {
                 return NotFound();
             }
-            var catalogs = await _context.Catalogs.FindAsync(id);
-            if (catalogs == null)
+            var job = await _context.Jobs.FindAsync(id);
+            if (job == null)
             {
                 return NotFound();
             }
 
-            _context.Catalogs.Remove(catalogs);
+            _context.Jobs.Remove(job);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool CatalogsExists(int id)
+        private bool JobExists(int id)
         {
-            return (_context.Catalogs?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Jobs?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
