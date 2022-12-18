@@ -25,22 +25,22 @@ namespace Test.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Catalog_cons>>> GetCatalog_Cons()
         {
-          if (_context.Catalog_Cons == null)
+          if (_context.Catalogs_Cons == null)
           {
               return NotFound();
           }
-            return await _context.Catalog_Cons.ToListAsync();
+            return await _context.Catalogs_Cons.ToListAsync();
         }
 
         // GET: api/Catalog_cons/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Catalog_cons>> GetCatalog_cons(int id)
         {
-          if (_context.Catalog_Cons == null)
+          if (_context.Catalogs_Cons == null)
           {
               return NotFound();
           }
-            var catalog_cons = await _context.Catalog_Cons.FindAsync(id);
+            var catalog_cons = await _context.Catalogs_Cons.FindAsync(id);
 
             if (catalog_cons == null)
             {
@@ -51,7 +51,6 @@ namespace Test.Controllers
         }
 
         // PUT: api/Catalog_cons/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCatalog_cons(int id, Catalog_cons catalog_cons)
         {
@@ -82,15 +81,14 @@ namespace Test.Controllers
         }
 
         // POST: api/Catalog_cons
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Catalog_cons>> PostCatalog_cons(Catalog_cons catalog_cons)
         {
-          if (_context.Catalog_Cons == null)
+          if (_context.Catalogs_Cons == null)
           {
               return Problem("Entity set 'TestContext.Catalog_Cons'  is null.");
           }
-            _context.Catalog_Cons.Add(catalog_cons);
+            _context.Catalogs_Cons.Add(catalog_cons);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetCatalog_cons", new { id = catalog_cons.Id }, catalog_cons);
@@ -100,17 +98,17 @@ namespace Test.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCatalog_cons(int id)
         {
-            if (_context.Catalog_Cons == null)
+            if (_context.Catalogs_Cons == null)
             {
                 return NotFound();
             }
-            var catalog_cons = await _context.Catalog_Cons.FindAsync(id);
+            var catalog_cons = await _context.Catalogs_Cons.FindAsync(id);
             if (catalog_cons == null)
             {
                 return NotFound();
             }
 
-            _context.Catalog_Cons.Remove(catalog_cons);
+            _context.Catalogs_Cons.Remove(catalog_cons);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -118,7 +116,7 @@ namespace Test.Controllers
 
         private bool Catalog_consExists(int id)
         {
-            return (_context.Catalog_Cons?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Catalogs_Cons?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

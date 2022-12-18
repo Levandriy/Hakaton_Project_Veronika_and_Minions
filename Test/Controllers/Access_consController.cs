@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Test;
+using Test.Models;
 using Test.Data;
 
 namespace Test.Controllers
@@ -51,7 +51,6 @@ namespace Test.Controllers
         }
 
         // PUT: api/Access_cons/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAccess_cons(int id, Access_cons access_cons)
         {
@@ -82,7 +81,6 @@ namespace Test.Controllers
         }
 
         // POST: api/Access_cons
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Access_cons>> PostAccess_cons(Access_cons access_cons)
         {

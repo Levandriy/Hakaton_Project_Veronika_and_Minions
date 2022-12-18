@@ -555,3 +555,4 @@ C:\Users\nitro\Documents\GitHub\Hakaton_Project_Veronika_and_Minions\Test\obj\De
 C:\Users\nitro\Documents\GitHub\Hakaton_Project_Veronika_and_Minions\Test\obj\Debug\net7.0\Test.genruntimeconfig.cache
 C:\Users\nitro\Documents\GitHub\Hakaton_Project_Veronika_and_Minions\Test\obj\Debug\net7.0\ref\Test.dll
 C:\Users\nitro\Documents\GitHub\Hakaton_Project_Veronika_and_Minions\Test\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\Профф\Проекты\Hakaton_Project_Veronika_and_Minions\Test\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

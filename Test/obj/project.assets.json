@@ -11182,25 +11182,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nitro\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Варессо\\.nuget\\packages\\": {},
+    "E:\\Program Files (x86)\\Visio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nitro\\Documents\\GitHub\\Hakaton_Project_Veronika_and_Minions\\Test\\Test.csproj",
+      "projectUniqueName": "E:\\Профф\\Проекты\\Hakaton_Project_Veronika_and_Minions\\Test\\Test.csproj",
       "projectName": "Test",
-      "projectPath": "C:\\Users\\nitro\\Documents\\GitHub\\Hakaton_Project_Veronika_and_Minions\\Test\\Test.csproj",
-      "packagesPath": "C:\\Users\\nitro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nitro\\Documents\\GitHub\\Hakaton_Project_Veronika_and_Minions\\Test\\obj\\",
+      "projectPath": "E:\\Профф\\Проекты\\Hakaton_Project_Veronika_and_Minions\\Test\\Test.csproj",
+      "packagesPath": "C:\\Users\\Варессо\\.nuget\\packages\\",
+      "outputPath": "E:\\Профф\\Проекты\\Hakaton_Project_Veronika_and_Minions\\Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "E:\\Program Files (x86)\\Visio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\nitro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Варессо\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

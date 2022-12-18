@@ -1,6 +1,6 @@
 ﻿using Microsoft.Build.Framework;
 
-namespace Test
+namespace Test.Models
 {
     public class Materials
     {

@@ -13,7 +13,7 @@
             <summary>
             Выбрать все материалы из базы данных проекта, то есть базы данных, созданной согласно DBcontext (см папку Data, TestContext.cs)
             </summary>
-            <returns>Список пользователей</returns>
+            <returns>Список материалов</returns>
         </member>
         <member name="T:Test.Controllers.UsersAPIController">
             <summary>
@@ -33,7 +33,7 @@
             <param name="id">ID пользователя, которого нужно найти</param>
             <returns>Пользователя</returns>
         </member>
-        <member name="M:Test.Controllers.UsersAPIController.PutUser(System.Int32,Test.User)">
+        <member name="M:Test.Controllers.UsersAPIController.PutUser(System.Int32,Test.Models.User)">
             <summary>
             Изменить пользователя
             </summary>
@@ -41,7 +41,7 @@
             <param name="user">Новые данные (соответсвуют модели), код должен быть тем же</param>
             <returns>Сообщение об успешном обновлении или ошибку</returns>
         </member>
-        <member name="M:Test.Controllers.UsersAPIController.PostUser(Test.User)">
+        <member name="M:Test.Controllers.UsersAPIController.PostUser(Test.Models.User)">
             <summary>
             Создать пользователя
             </summary>

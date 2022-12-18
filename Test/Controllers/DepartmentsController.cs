@@ -25,22 +25,22 @@ namespace Test.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Department>>> GetDepartmets()
         {
-          if (_context.Departmets == null)
+          if (_context.Departments == null)
           {
               return NotFound();
           }
-            return await _context.Departmets.ToListAsync();
+            return await _context.Departments.ToListAsync();
         }
 
         // GET: api/Departments/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Department>> GetDepartment(int id)
         {
-          if (_context.Departmets == null)
+          if (_context.Departments == null)
           {
               return NotFound();
           }
-            var department = await _context.Departmets.FindAsync(id);
+            var department = await _context.Departments.FindAsync(id);
 
             if (department == null)
             {
@@ -51,7 +51,6 @@ namespace Test.Controllers
         }
 
         // PUT: api/Departments/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutDepartment(int id, Department department)
         {
@@ -82,15 +81,14 @@ namespace Test.Controllers
         }
 
         // POST: api/Departments
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Department>> PostDepartment(Department department)
         {
-          if (_context.Departmets == null)
+          if (_context.Departments == null)
           {
               return Problem("Entity set 'TestContext.Departmets'  is null.");
           }
-            _context.Departmets.Add(department);
+            _context.Departments.Add(department);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetDepartment", new { id = department.Id }, department);
@@ -100,17 +98,17 @@ namespace Test.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteDepartment(int id)
         {
-            if (_context.Departmets == null)
+            if (_context.Departments == null)
             {
                 return NotFound();
             }
-            var department = await _context.Departmets.FindAsync(id);
+            var department = await _context.Departments.FindAsync(id);
             if (department == null)
             {
                 return NotFound();
             }
 
-            _context.Departmets.Remove(department);
+            _context.Departments.Remove(department);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -118,7 +116,7 @@ namespace Test.Controllers
 
         private bool DepartmentExists(int id)
         {
-            return (_context.Departmets?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Departments?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
