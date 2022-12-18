@@ -59,6 +59,25 @@
           }
         }
       },
+      "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.15.1"
+        },
+        "compile": {
+          "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.AspNetCore.OpenApi/7.0.1": {
         "type": "package",
         "dependencies": {
@@ -3832,6 +3851,21 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.1": {
+      "sha512": "2pZZ1GQExpBV8xdRoS1RbopSXBnZBN6INA4KBb8utk6BDLzqHzfF7PCVPRS9YuPx/UHVOU8SJiPjWpcxTsvghw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/7.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
+        "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
+        "microsoft.aspnetcore.authentication.jwtbearer.7.0.1.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
     "Microsoft.AspNetCore.OpenApi/7.0.1": {
@@ -11137,6 +11171,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 7.0.1",
       "Microsoft.AspNetCore.OpenApi >= 7.0.1",
       "Microsoft.EntityFrameworkCore >= 7.0.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.1",
@@ -11147,23 +11182,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Варессо\\.nuget\\packages\\": {},
-    "E:\\Program Files (x86)\\Visio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\nitro\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Профф\\Проекты\\Hakaton_Project_Veronika_and_Minions\\Test\\Test.csproj",
+      "projectUniqueName": "C:\\Users\\nitro\\Documents\\GitHub\\Hakaton_Project_Veronika_and_Minions\\Test\\Test.csproj",
       "projectName": "Test",
-      "projectPath": "E:\\Профф\\Проекты\\Hakaton_Project_Veronika_and_Minions\\Test\\Test.csproj",
-      "packagesPath": "C:\\Users\\Варессо\\.nuget\\packages\\",
-      "outputPath": "E:\\Профф\\Проекты\\Hakaton_Project_Veronika_and_Minions\\Test\\obj\\",
+      "projectPath": "C:\\Users\\nitro\\Documents\\GitHub\\Hakaton_Project_Veronika_and_Minions\\Test\\Test.csproj",
+      "packagesPath": "C:\\Users\\nitro\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nitro\\Documents\\GitHub\\Hakaton_Project_Veronika_and_Minions\\Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "E:\\Program Files (x86)\\Visio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Варессо\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nitro\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -11190,6 +11227,10 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": {
+            "target": "Package",
+            "version": "[7.0.1, )"
+          },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[7.0.1, )"
