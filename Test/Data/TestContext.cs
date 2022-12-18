@@ -15,17 +15,12 @@ namespace Test.Data
         {
             Database.EnsureCreated();
         }
-
         public DbSet<User> Users { get; set; } = default!;
-
         public DbSet<Job> Jobs { get; set; } = default!;
-
         public DbSet<Access_cons> Access_Cons { get; set; } = default!;
-
         public DbSet<Catalogs> Catalogs { get; set; } = default!;
-
         public DbSet<Catalog_cons> Catalog_Cons { get; set; } = default!;
-
         public DbSet<Materials> Materials { get; set; } = default!;
+        public DbSet<Department> Departmets { get; set; } = default!;
     }
 }

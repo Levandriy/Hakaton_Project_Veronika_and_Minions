@@ -10,6 +10,9 @@ using Test.Data;
 
 namespace Test.Controllers
 {
+    /// <summary>
+    /// Контроллер для материалов
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class MaterialsController : ControllerBase
@@ -21,7 +24,10 @@ namespace Test.Controllers
             _context = context;
         }
 
-        // GET: api/Materials
+        /// <summary>
+        /// Выбрать все материалы из базы данных проекта, то есть базы данных, созданной согласно DBcontext (см папку Data, TestContext.cs)
+        /// </summary>
+        /// <returns>Список материалов</returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Materials>>> GetMaterials()
         {
@@ -51,7 +57,6 @@ namespace Test.Controllers
         }
 
         // PUT: api/Materials/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutMaterials(int id, Materials materials)
         {
@@ -82,7 +87,6 @@ namespace Test.Controllers
         }
 
         // POST: api/Materials
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Materials>> PostMaterials(Materials materials)
         {

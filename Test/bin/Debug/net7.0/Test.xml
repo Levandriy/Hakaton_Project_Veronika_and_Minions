@@ -4,6 +4,17 @@
         <name>Test</name>
     </assembly>
     <members>
+        <member name="T:Test.Controllers.MaterialsController">
+            <summary>
+            Контроллер для материалов
+            </summary>
+        </member>
+        <member name="M:Test.Controllers.MaterialsController.GetMaterials">
+            <summary>
+            Выбрать все материалы из базы данных проекта, то есть базы данных, созданной согласно DBcontext (см папку Data, TestContext.cs)
+            </summary>
+            <returns>Список пользователей</returns>
+        </member>
         <member name="T:Test.Controllers.UsersAPIController">
             <summary>
             API контроллер для модели пользователя
