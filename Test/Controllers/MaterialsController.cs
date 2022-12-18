@@ -27,7 +27,7 @@ namespace Test.Controllers
         /// <summary>
         /// Выбрать все материалы из базы данных проекта, то есть базы данных, созданной согласно DBcontext (см папку Data, TestContext.cs)
         /// </summary>
-        /// <returns>Список пользователей</returns>
+        /// <returns>Список материалов</returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Materials>>> GetMaterials()
         {
