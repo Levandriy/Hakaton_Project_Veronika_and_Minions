@@ -92,9 +92,9 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.Map("/login/{Select Id From Users}", (string Id) =>
+app.Map("/login/{Mail}", (string Mail) =>
 {
-    var claims = new List<Claim> { new Claim(ClaimTypes.Name, Id) };
+    var claims = new List<Claim> { new Claim(ClaimTypes.Name, Mail) };
     // создаем JWT-токен
     var jwt = new JwtSecurityToken(
             issuer: AuthOptions.ISSUER,
